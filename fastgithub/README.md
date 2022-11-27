@@ -1,0 +1,5 @@
+sudo ./fastgithub start
+全局：
+export http_proxy=http://127.0.0.1:38457 export https_proxy=http://127.0.0.1:38457 
+git:
+git config --global http.proxy http://127.0.0.1:38457 git config --global https.proxy http://127.0.0.1:38457

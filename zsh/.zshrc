@@ -116,9 +116,13 @@ alias gdf="git diff"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
-alias proxy='export https_proxy="http://${hostip}:7890";export http_proxy="http://${hostip}:7890";'
-alias unproxy='unset https_proxy; unset http_proxy;'
-
+alias proxy='export https_proxy="http://${hostip}:7890";export http_proxy="http://${hostip}:7890";git config --global https.proxy "http://172.26.64.1:7890";git config --global http.proxy "http://172.26.64.1:7890";'
+alias unproxy='unset https_proxy; unset http_proxy;git config --global --unset http.proxy;git config --global --unset https.proxy'
 export HISTTIMEFORMAT="%F %T "
 export PATH="/usr/local/sbin:$PATH"
+alias here="explorer.exe ."
 
+# pnpm
+export PNPM_HOME="/home/khaos/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
