@@ -10,11 +10,6 @@
         "key": "ctrl+l",
         "command": "workbench.action.focusRightGroup"
     },
-  	// 关闭tab
-		{
-        "key": "alt+w",
-        "command": "workbench.action.closeActiveEditor"
-    },
     // 刷新文件浏览器
     {
         "key": "shift+r",
@@ -64,6 +59,29 @@
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     // 打开文件
+    {
+        "key": "alt+w",
+        "command": "workbench.action.closeActiveEditor",
+    },
+    {
+        "key": "alt+n",
+        "command": "workbench.view.explorer",
+    },
+    {
+        "key": "alt+n",
+        "command": "workbench.action.closeSidebar",
+        "when": "sideBarVisible==1",
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusSideBar",
+        "when": "activeEditorGroupIndex ==1",
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "sideBarFocus",
+    },
     {
         "key": "o",
         "command": "explorer.openAndPassFocus",

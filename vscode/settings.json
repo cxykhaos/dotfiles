@@ -1,13 +1,38 @@
 {
-    // 使用系统剪贴板
+    "python.formatting.provider": "black",
+    "cornflakes.linter.executablePath": "path/to/venvs/myvenv/bin/flake8",
+    "cornflakes.linter.run": "onType",
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "vsicons.dontShowNewVersionMessage": true,
+    "python.formatting.blackArgs": [
+        "-l 120"
+    ],
+    "editor.formatOnType": true,
+    "python.formatting.blackPath": "./local/bin/black",
+    "go.autocompleteUnimportedPackages": true,
+    "python.autoComplete.extraPaths": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages"
+    ],
+    "tabnine.experimentalAutoImports": true,
+    "python.analysis.extraPaths": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages"
+    ],
+    "sync.gist": "434ead4cb1651b9859854a26f1f4b7c8",
+    "kite.showWelcomeNotificationOnStartup": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.hover.delay": 1000,
+    "editor.quickSuggestionsDelay": 0,
+    "workbench.hover.delay": 1000,
     "vim.useSystemClipboard": true,
-    // 智能行号
     "vim.smartRelativeLine": true,
-    // 不使用 ctrl 键
     "vim.useCtrlKeys": true,
-    // leader key 设置为空格
     "vim.leader": "<space>",
-    // 插入模式下的键绑定，快速按 jj 或者 jk 退出插入模式
     "vim.insertModeKeyBindings": [
         {
             "before": [
@@ -28,9 +53,7 @@
             ]
         }
     ],
-    // 普通模式下的键绑定
     "vim.normalModeKeyBindingsNonRecursive": [
-        // 格式化代码
         {
             "before": [
                 "<leader>",
@@ -41,7 +64,6 @@
                 "editor.action.formatDocument"
             ]
         },
-        // 变量符号重命名
         {
             "before": [
                 "<leader>",
@@ -52,7 +74,6 @@
                 "editor.action.rename"
             ]
         },
-        // 定义速览
         {
             "before": [
                 "K"
@@ -61,7 +82,6 @@
                 "editor.action.showHover"
             ]
         },
-        // 转到定义
         {
             "before": [
                 "g",
@@ -71,7 +91,6 @@
                 "editor.action.revealDefinition"
             ]
         },
-        // 转到引用
         {
             "before": [
                 "g",
@@ -81,7 +100,6 @@
                 "editor.action.goToReferences"
             ]
         },
-        // 转到实现
         {
             "before": [
                 "g",
@@ -91,29 +109,24 @@
                 "editor.action.goToImplementation"
             ]
         },
-        // 全局搜索文件名
         {
             "before": [
                 "<leader>",
-                "f",
-                "f"
+                "p"
             ],
             "commands": [
                 "workbench.action.quickOpen"
             ]
         },
-        // 全局搜索文字
         {
             "before": [
                 "<leader>",
-                "f",
-                "w"
+                "f"
             ],
             "commands": [
                 "workbench.action.terminal.searchWorkspace"
             ]
         },
-        // 切换最左侧图标面板可见性
         {
             "before": [
                 "<leader>",
@@ -124,17 +137,6 @@
                 "workbench.action.toggleActivityBarVisibility"
             ]
         },
-        // 打开文件浏览器
-        {
-            "before": [
-                "<leader>",
-                "e"
-            ],
-            "commands": [
-                "workbench.view.explorer"
-            ]
-        },
-        // 关闭当前标签页
         {
             "before": [
                 "<leader>",
@@ -144,7 +146,6 @@
                 "workbench.action.closeActiveEditor"
             ]
         },
-        // 退出 vscode
         {
             "before": [
                 "<leader>",
@@ -154,7 +155,6 @@
                 "workbench.action.closeWindow"
             ]
         },
-        // 保存文件
         {
             "before": [
                 "<leader>",
@@ -164,7 +164,6 @@
                 "workbench.action.files.save"
             ]
         },
-        // 组中上一个标签页
         {
             "before": [
                 "("
@@ -173,7 +172,6 @@
                 "workbench.action.previousEditorInGroup"
             ]
         },
-        // 组中下一个标签页
         {
             "before": [
                 ")"
@@ -182,18 +180,16 @@
                 "workbench.action.nextEditorInGroup"
             ]
         },
-    	  // 获取当前文件路径
         {
             "before": [
                 "<leader>",
-                "f",
+                "r",
                 "p"
             ],
             "commands": [
                 "workbench.action.files.copyPathOfActiveFile"
             ]
         },
-        // 关闭标签组
         {
             "before": [
                 "<leader>",
@@ -204,7 +200,17 @@
                 "workbench.action.closeEditorsInGroup"
             ]
         },
-        // 移动到上一个标签组
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.closeEditorsInGroup"
+            ],
+            "when": "sideBarFocus"
+        },
         {
             "before": [
                 "<leader>",
@@ -214,7 +220,6 @@
                 "workbench.action.moveEditorToPreviousGroup"
             ]
         },
-        // 移动到下一个标签组
         {
             "before": [
                 "<leader>",
@@ -224,7 +229,6 @@
                 "workbench.action.moveEditorToNextGroup"
             ]
         },
-        // 全部折叠
         {
             "before": [
                 "<leader>",
@@ -235,7 +239,6 @@
                 "editor.foldAll"
             ]
         },
-        // 全部展开
         {
             "before": [
                 "<leader>",
@@ -245,15 +248,24 @@
             "commands": [
                 "editor.unfoldAll"
             ]
+        },
+        {
+            "before": [
+                "]",
+                "d"
+            ],
+            "commands": [
+                "editor.action.marker.nextInFiles"
+            ]
         }
     ],
-    "[python]": {
-        "editor.formatOnType": true
+    "window.zoomLevel": 1,
+    "redhat.telemetry.enabled": true,
+    "editor.smoothScrolling": true,
+    "search.exclude": {
+        "**/node_modules/*": true
+    },
+    "remote.SSH.remotePlatform": {
+        "120.24.44.111": "linux"
     }
-    // 非插入模式下禁用输入法，这是 linux 下 fcitx5 输入法的设置，不具有普适性，可以根据参考自行修改
-    // 参考链接 https://github.com/VSCodeVim/Vim#input-method
-    // "vim.autoSwitchInputMethod.enable": true,
-    // "vim.autoSwitchInputMethod.defaultIM": "1",
-    // "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx5-remote",
-    // "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx5-remote -t {im}"
 }
