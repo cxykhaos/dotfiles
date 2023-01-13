@@ -1,7 +1,15 @@
 // 将键绑定放在此文件中以覆盖默认值
 [
-    // 上一个标签组
     {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+k",
+        "command": ""
+    },
+    {
+        // 上一个标签组
         "key": "ctrl+h",
         "command": "workbench.action.focusLeftGroup"
     },

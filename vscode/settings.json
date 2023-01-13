@@ -1,32 +1,20 @@
 {
-    "python.formatting.provider": "black",
-    "cornflakes.linter.executablePath": "path/to/venvs/myvenv/bin/flake8",
-    "cornflakes.linter.run": "onType",
     "editor.formatOnSave": true,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true
     },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1,
+        "asvetliakov.vscode-neovim": 1
+    },
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "One Dark Pro Darker",
     "vsicons.dontShowNewVersionMessage": true,
-    "python.formatting.blackArgs": [
-        "-l 120"
-    ],
     "editor.formatOnType": true,
-    "python.formatting.blackPath": "./local/bin/black",
     "go.autocompleteUnimportedPackages": true,
-    "python.autoComplete.extraPaths": [
-        "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages"
-    ],
-    "tabnine.experimentalAutoImports": true,
-    "python.analysis.extraPaths": [
-        "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages"
-    ],
-    "sync.gist": "434ead4cb1651b9859854a26f1f4b7c8",
-    "kite.showWelcomeNotificationOnStartup": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.hover.delay": 1000,
+    "editor.hover.delay": 500,
     "editor.quickSuggestionsDelay": 0,
     "workbench.hover.delay": 1000,
     "vim.useSystemClipboard": true,
@@ -259,13 +247,15 @@
             ]
         }
     ],
-    "window.zoomLevel": 1,
-    "redhat.telemetry.enabled": true,
     "editor.smoothScrolling": true,
     "search.exclude": {
         "**/node_modules/*": true
     },
     "remote.SSH.remotePlatform": {
         "120.24.44.111": "linux"
-    }
+    },
+    "disable-hardware-acceleration": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "search.followSymlinks": false,
+    "git.autorefresh": false,
 }
