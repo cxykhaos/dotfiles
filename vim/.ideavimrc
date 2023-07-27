@@ -1,6 +1,5 @@
 " line number
 set nu
-set cursorline
 set relativenumber "打开当前行下划线
 set wrap "自动换行
 set hlsearch "高亮所有搜索结果
@@ -8,9 +7,19 @@ set incsearch "边输入变搜索
 set ignorecase "忽略大小写
 set smartcase "智能大小写
 set clipboard+=unnamed  "共享剪切板
+" vim自身命令行模式智能补全
+set laststatus=2
+set ruler
+set history=100000
+set showmode
+set cursorline
+set keep-english-in-normal " 开启输入法自动切换功能
+set keep-english-in-normal-and-restore-in-insert " 回到insert模式时恢复输入法
+set nokeep-english-in-normal-and-restore-in-insert " 保留输入法自动切换功能，但是回到insert模式不恢复输入法
+set nokeep-english-in-normal " 关闭输入法自动切换功能
+Plug 'easymotion/vim-easymotion'
 " set leader to space
 let mapleader=" "
-
 " quit file
 :nmap <leader>q <Action>(quit)
 
@@ -69,19 +78,12 @@ let mapleader=" "
 " recent files
 :nmap <leader>fo <Action>(RecentFiles)
 
-" toggle file tree
-:nmap <C-n> <Action>(ActivateProjectToolWindow)
-
-" next buffer
-:nmap <TAB> <Action>(NextTab)
-:nmap <S-Tab> <Action>(PreviousTab)
-
 " window right
 :nmap <C-l> <C-w>l
 " window up
 :nmap <C-k> <C-w>k
 " window down
-:nmap <C-j> <C-w>j
+:nmap <C-j> <C-w>
 " window left
 :nmap <C-h> <C-w>h
 
@@ -104,3 +106,19 @@ let mapleader=" "
 
 " generate
 :nmap <leader>ca <Action>(Generate)
+
+"在可视模式下，使用X将高亮选中的字符串进行搜索
+vnoremap * y/<C-R>+<CR>
+
+" 重载 ideavimrc 配置
+:nmap <leader>cr :source ~/.ideavimrc<CR>
+
+
+"map <C-P><Up>
+"map <C-N><Down>
+
+" plug
+set Sneak
+set which-key
+Plug 'preservim/nerdtree`
+map <c-n> :NERDTree<CR>
