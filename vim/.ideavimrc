@@ -10,13 +10,14 @@ set clipboard+=unnamed  "共享剪切板
 " vim自身命令行模式智能补全
 set laststatus=2
 set ruler
-set history=100000
+set history=10000
 set showmode
 set cursorline
 set keep-english-in-normal " 开启输入法自动切换功能
-set keep-english-in-normal-and-restore-in-insert " 回到insert模式时恢复输入法
-set nokeep-english-in-normal-and-restore-in-insert " 保留输入法自动切换功能，但是回到insert模式不恢复输入法
-set nokeep-english-in-normal " 关闭输入法自动切换功能
+"set keep-english-in-normal-and-restore-in-insert " 回到insert模式时恢复输入法
+"set nokeep-english-in-normal-and-restore-in-insert " 保留输入法自动切换功能，但是回到insert模式不恢复输入法
+"set nokeep-english-in-normal " 关闭输入法自动切换功能
+set wildmode=list:longest
 Plug 'easymotion/vim-easymotion'
 " set leader to space
 let mapleader=" "
@@ -31,12 +32,15 @@ let mapleader=" "
 :nmap ]d <Action>(GotoNextError)
 :nmap [d <Action>(GotoPreviousError)
 
+"自动生成建议
+:nmap <leader>p <Action>(IntroduceVariable)
+
 "close tab
 :nmap <A-w> <Action>(CloseEditor)
 
 " jump tab
-:nmap ( :bp<CR>
-:nmap ) :bn<CR>
+:nmap ( :tabprevious<CR>
+:nmap ) :tabnext<CR>
 " center while page jumping up/down
 :nmap <C-d> <C-d>zz
 :nmap <C-u> <C-u>zz
@@ -83,7 +87,7 @@ let mapleader=" "
 " window up
 :nmap <C-k> <C-w>k
 " window down
-:nmap <C-j> <C-w>
+:nmap <C-j> <C-w>j
 " window left
 :nmap <C-h> <C-w>h
 
@@ -118,7 +122,7 @@ vnoremap * y/<C-R>+<CR>
 "map <C-N><Down>
 
 " plug
-set Sneak
+set sneak
 set which-key
-Plug 'preservim/nerdtree`
-map <c-n> :NERDTree<CR>
+set nerdtree
+map <C-n> :NERDTree<CR>
