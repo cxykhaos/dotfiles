@@ -1,0 +1,132 @@
+" line number
+set nu
+set relativenumber "打开当前行下划线
+set wrap "自动换行
+set hlsearch "高亮所有搜索结果
+set incsearch "边输入变搜索
+set ignorecase "忽略大小写
+set smartcase "智能大小写
+set clipboard+=unnamed  "共享剪切板
+" vim自身命令行模式智能补全
+set laststatus=2
+set ruler
+set history=10000
+set showmode
+set cursorline
+set keep-english-in-normal " 开启输入法自动切换功能
+"set keep-english-in-normal-and-restore-in-insert " 回到insert模式时恢复输入法
+"set nokeep-english-in-normal-and-restore-in-insert " 保留输入法自动切换功能，但是回到insert模式不恢复输入法
+"set nokeep-english-in-normal " 关闭输入法自动切换功能
+set wildmode=list:longest
+Plug 'easymotion/vim-easymotion'
+" set leader to space
+let mapleader=" "
+" quit file
+:nmap <leader>q <Action>(quit)
+
+" format code
+:nmap <leader>fm <Action>(ReformatCode)
+:vmap <leader>fm <Action>(ReformatCode)
+
+" jump error
+:nmap ]d <Action>(GotoNextError)
+:nmap [d <Action>(GotoPreviousError)
+
+"自动生成建议
+:nmap <leader>p <Action>(IntroduceVariable)
+
+"close tab
+:nmap <A-w> <Action>(CloseEditor)
+
+" jump tab
+:nmap ( :tabprevious<CR>
+:nmap ) :tabnext<CR>
+" center while page jumping up/down
+:nmap <C-d> <C-d>zz
+:nmap <C-u> <C-u>zz
+
+
+" jump to service impl
+:nmap gi <Action>(GotoImplementation)
+" center when moving between search results
+:nmap n nzz
+:nmap N Nzz
+
+" toggle the breakpoint on the current line
+:nmap <leader>bp <Action>(ToggleLineBreakpoint)
+
+" floating diagnostic
+:nmap <leader>fd <Action>(ShowErrorDescription)
+
+" quick implementations
+:nmap <leader>fi <Action>(QuickImplementations)
+
+" Don't copy the replaced text after pasting in visual mode
+:xmap p p:let @+=@0<CR>:let @"=@0<CR>
+
+" move cursor while in insert mode
+:imap <C-l> <Right>
+:imap <C-k> <Up>
+:imap <C-j> <Down>
+:imap <C-h> <Left>
+
+" close buffer
+:nmap <leader>x <Action>(CloseContent)
+
+" search everywhere
+:nmap <leader>fa <Action>(SearchEverywhere)
+
+" go to file
+:nmap <leader>ff <Action>(GotoFile)
+
+" recent files
+:nmap <leader>fo <Action>(RecentFiles)
+
+" window right
+:nmap <C-l> <C-w>l
+" window up
+:nmap <C-k> <C-w>k
+" window down
+:nmap <C-j> <C-w>j
+" window left
+:nmap <C-h> <C-w>h
+" comment select line
+:nmap gc :action CommentByLineComment<CR>
+" find in all files
+:nmap <leader>fw <Action>(FindInPath)
+
+" comments
+:nmap <leader>/ <Action>(CommentByLineComment)
+:vmap <leader>/ <Action>(CommentByBlockComment)
+
+" rename
+:nmap <leader>rn <Action>(RenameElement)
+
+" run it
+:nmap <leader>ri <Action>(Run)
+" debug it
+:nmap <leader>di <Action>(Debug)
+" stop it
+:nmap <leader>si <Action>(Stop)
+
+" generate
+:nmap <leader>ca <Action>(Generate)
+
+"在可视模式下，使用X将高亮选中的字符串进行搜索
+vnoremap * y/<C-R>+<CR>
+
+" 重载 ideavimrc 配置
+:nmap <leader>cr :source ~/.ideavimrc<CR>
+
+
+"map <C-P><Up>
+"map <C-N><Down>
+
+" plug
+set sneak
+set which-key
+set nerdtree
+map <C-n> :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
+map <C-h> :NERDTreeToggle<CR>
+
